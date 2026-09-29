@@ -1,0 +1,562 @@
+coverage:
+  all_nodes: 0
+  covered_nodes: 0
+mutation_score: 43.18181818181818
+mutations:
+- exception_traceback: 'def test_overdraft_fee_escalated():
+
+    >       assert compute_overdraft_fee(-150, 100, 35) == 70
+
+    E       AssertionError
+
+
+    test_banking.py:35: AssertionError'
+  killer: test_banking.py::test_overdraft_fee_escalated
+  module: &id001 !!python/module:banking ''
+  mutations:
+  - lineno: 34
+    operator: AOR
+  number: 1
+  status: killed
+  tests_run: 6
+  time: 0.858494758605957
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 51
+    operator: AOR
+  number: 2
+  status: survived
+  tests_run: 20
+  time: 0.4275388717651367
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 57
+    operator: AOR
+  number: 3
+  status: survived
+  tests_run: 20
+  time: 0.40773463249206543
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 57
+    operator: AOR
+  number: 4
+  status: survived
+  tests_run: 20
+  time: 0.41232848167419434
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 84
+    operator: AOR
+  number: 5
+  status: survived
+  tests_run: 20
+  time: 0.3960995674133301
+- exception_traceback: "def test_interest_calculation():\n        interest = calculate_interest(1000,\
+    \ 0.05, 30)\n>       assert round(interest, 2) == 4.11\nE       AssertionError\n\
+    \ntest_banking.py:64: AssertionError"
+  killer: test_banking.py::test_interest_calculation
+  module: *id001
+  mutations:
+  - lineno: 103
+    operator: AOR
+  number: 6
+  status: killed
+  tests_run: 13
+  time: 0.3798959255218506
+- exception_traceback: "def test_interest_calculation():\n        interest = calculate_interest(1000,\
+    \ 0.05, 30)\n>       assert round(interest, 2) == 4.11\nE       AssertionError\n\
+    \ntest_banking.py:64: AssertionError"
+  killer: test_banking.py::test_interest_calculation
+  module: *id001
+  mutations:
+  - lineno: 103
+    operator: AOR
+  number: 7
+  status: killed
+  tests_run: 13
+  time: 0.4238438606262207
+- exception_traceback: "def test_interest_calculation():\n        interest = calculate_interest(1000,\
+    \ 0.05, 30)\n>       assert round(interest, 2) == 4.11\nE       AssertionError\n\
+    \ntest_banking.py:64: AssertionError"
+  killer: test_banking.py::test_interest_calculation
+  module: *id001
+  mutations:
+  - lineno: 104
+    operator: AOR
+  number: 8
+  status: killed
+  tests_run: 13
+  time: 0.38378381729125977
+- exception_traceback: "def test_withdrawal_daily_limit_exceeded():\n        status,\
+    \ new_balance, fee = process_withdrawal(500, 300, 300, 500, False)\n>       assert\
+    \ status == \"Daily Limit Exceeded\"\nE       AssertionError\n\ntest_banking.py:79:\
+    \ AssertionError"
+  killer: test_banking.py::test_withdrawal_daily_limit_exceeded
+  module: *id001
+  mutations:
+  - lineno: 131
+    operator: AOR
+  number: 9
+  status: killed
+  tests_run: 16
+  time: 0.3919563293457031
+- exception_traceback: 'def test_fraud_high_risk():
+
+    >       assert fraud_risk_level(5000, 1000, 1000, True, 6) == "High"
+
+    E       AssertionError
+
+
+    test_banking.py:55: AssertionError'
+  killer: test_banking.py::test_fraud_high_risk
+  module: *id001
+  mutations:
+  - lineno: 91
+    operator: ASR
+  number: 10
+  status: killed
+  tests_run: 11
+  time: 0.4090301990509033
+- exception_traceback: "def test_transfer_international_with_fx_fee():\n        sender\
+    \ = Account(\"A1\", 1000, True, True, False, \"US\")\n        receiver = Account(\"\
+    B1\", 100, True, True, False, \"US\")\n        status, new_sender, new_receiver\
+    \ = transfer_funds(sender, receiver, 100, True, False)\n>       assert status\
+    \ == \"Transfer Completed\"\nE       AssertionError\n\ntest_banking.py:102: AssertionError"
+  killer: test_banking.py::test_transfer_international_with_fx_fee
+  module: *id001
+  mutations:
+  - lineno: 151
+    operator: COD
+  number: 11
+  status: killed
+  tests_run: 19
+  time: 0.3973817825317383
+- exception_traceback: 'def test_account_opening_rejected_low_deposit():
+
+    >       assert validate_account_opening(25, 20, True, "US") == "Rejected - Low
+    Initial Deposit"
+
+    E       AssertionError
+
+
+    test_banking.py:19: AssertionError'
+  killer: test_banking.py::test_account_opening_rejected_low_deposit
+  module: *id001
+  mutations:
+  - lineno: 20
+    operator: COI
+  number: 12
+  status: killed
+  tests_run: 2
+  time: 0.40947937965393066
+- exception_traceback: 'def test_overdraft_fee_standard():
+
+    >       assert compute_overdraft_fee(-20, 100, 35) == 35
+
+    E       AssertionError
+
+
+    test_banking.py:31: AssertionError'
+  killer: test_banking.py::test_overdraft_fee_standard
+  module: *id001
+  mutations:
+  - lineno: 32
+    operator: COI
+  number: 13
+  status: killed
+  tests_run: 5
+  time: 0.4087984561920166
+- exception_traceback: 'def test_loan_reject_payment_history():
+
+    >       assert assess_loan_application(720, 50000, 5000, 2, 3, 10000, True) ==
+    "Reject - Payment History"
+
+    E       AssertionError
+
+
+    test_banking.py:43: AssertionError'
+  killer: test_banking.py::test_loan_reject_payment_history
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: COI
+  number: 14
+  status: killed
+  tests_run: 8
+  time: 0.40630316734313965
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 62
+    operator: COI
+  number: 15
+  status: survived
+  tests_run: 20
+  time: 0.43348073959350586
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 86
+    operator: COI
+  number: 16
+  status: survived
+  tests_run: 20
+  time: 0.4154505729675293
+- exception_traceback: "def test_interest_calculation():\n        interest = calculate_interest(1000,\
+    \ 0.05, 30)\n>       assert round(interest, 2) == 4.11\nE       AssertionError\n\
+    \ntest_banking.py:64: AssertionError"
+  killer: test_banking.py::test_interest_calculation
+  module: *id001
+  mutations:
+  - lineno: 101
+    operator: COI
+  number: 17
+  status: killed
+  tests_run: 13
+  time: 0.385378360748291
+- exception_traceback: 'def test_deposit_invalid():
+
+    >       assert process_deposit(100, 0, False, False)[0] == "Invalid"
+
+    E       AssertionError
+
+
+    test_banking.py:68: AssertionError'
+  killer: test_banking.py::test_deposit_invalid
+  module: *id001
+  mutations:
+  - lineno: 108
+    operator: COI
+  number: 18
+  status: killed
+  tests_run: 14
+  time: 0.3880343437194824
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: LCR
+  number: 19
+  status: survived
+  tests_run: 20
+  time: 0.42658114433288574
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 62
+    operator: LCR
+  number: 20
+  status: survived
+  tests_run: 20
+  time: 0.40813446044921875
+- exception_traceback: 'def test_account_opening_approved():
+
+    >       assert validate_account_opening(25, 100, True, "US") == "Approved"
+
+    E       AssertionError
+
+
+    test_banking.py:23: AssertionError'
+  killer: test_banking.py::test_account_opening_approved
+  module: *id001
+  mutations:
+  - lineno: 22
+    operator: ROR
+  number: 21
+  status: killed
+  tests_run: 3
+  time: 0.4502861499786377
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 28
+    operator: ROR
+  number: 22
+  status: survived
+  tests_run: 20
+  time: 0.47083473205566406
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 46
+    operator: ROR
+  number: 23
+  status: survived
+  tests_run: 20
+  time: 0.44103574752807617
+- exception_traceback: 'def test_loan_reject_payment_history():
+
+    >       assert assess_loan_application(720, 50000, 5000, 2, 3, 10000, True) ==
+    "Reject - Payment History"
+
+    E       AssertionError
+
+
+    test_banking.py:43: AssertionError'
+  killer: test_banking.py::test_loan_reject_payment_history
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: ROR
+  number: 24
+  status: killed
+  tests_run: 8
+  time: 0.38090991973876953
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: ROR
+  number: 25
+  status: survived
+  tests_run: 20
+  time: 0.4104123115539551
+- exception_traceback: 'def test_loan_reject_payment_history():
+
+    >       assert assess_loan_application(720, 50000, 5000, 2, 3, 10000, True) ==
+    "Reject - Payment History"
+
+    E       AssertionError
+
+
+    test_banking.py:43: AssertionError'
+  killer: test_banking.py::test_loan_reject_payment_history
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: ROR
+  number: 26
+  status: killed
+  tests_run: 8
+  time: 0.4248218536376953
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 48
+    operator: ROR
+  number: 27
+  status: survived
+  tests_run: 20
+  time: 0.42087697982788086
+- exception_traceback: 'def test_loan_reject_payment_history():
+
+    >       assert assess_loan_application(720, 50000, 5000, 2, 3, 10000, True) ==
+    "Reject - Payment History"
+
+    E       AssertionError
+
+
+    test_banking.py:43: AssertionError'
+  killer: test_banking.py::test_loan_reject_payment_history
+  module: *id001
+  mutations:
+  - lineno: 53
+    operator: ROR
+  number: 28
+  status: killed
+  tests_run: 8
+  time: 0.4299201965332031
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 56
+    operator: ROR
+  number: 29
+  status: survived
+  tests_run: 20
+  time: 0.4226086139678955
+- exception_traceback: 'def test_loan_approve_strong_applicant():
+
+    >       assert assess_loan_application(800, 80000, 10000, 3, 0, 30000, False)
+    == "Approve"
+
+    E       AssertionError
+
+
+    test_banking.py:47: AssertionError'
+  killer: test_banking.py::test_loan_approve_strong_applicant
+  module: *id001
+  mutations:
+  - lineno: 56
+    operator: ROR
+  number: 30
+  status: killed
+  tests_run: 9
+  time: 0.41869282722473145
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 61
+    operator: ROR
+  number: 31
+  status: survived
+  tests_run: 20
+  time: 0.4388580322265625
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 80
+    operator: ROR
+  number: 32
+  status: survived
+  tests_run: 20
+  time: 0.42023801803588867
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 80
+    operator: ROR
+  number: 33
+  status: survived
+  tests_run: 20
+  time: 0.4088141918182373
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 84
+    operator: ROR
+  number: 34
+  status: survived
+  tests_run: 20
+  time: 0.39572620391845703
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 86
+    operator: ROR
+  number: 35
+  status: survived
+  tests_run: 20
+  time: 0.40093302726745605
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 93
+    operator: ROR
+  number: 36
+  status: survived
+  tests_run: 20
+  time: 0.4101541042327881
+- exception_traceback: "def test_interest_calculation():\n        interest = calculate_interest(1000,\
+    \ 0.05, 30)\n>       assert round(interest, 2) == 4.11\nE       AssertionError\n\
+    \ntest_banking.py:64: AssertionError"
+  killer: test_banking.py::test_interest_calculation
+  module: *id001
+  mutations:
+  - lineno: 101
+    operator: ROR
+  number: 37
+  status: killed
+  tests_run: 13
+  time: 0.3945944309234619
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 101
+    operator: ROR
+  number: 38
+  status: survived
+  tests_run: 20
+  time: 0.3732118606567383
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 101
+    operator: ROR
+  number: 39
+  status: survived
+  tests_run: 20
+  time: 0.3998298645019531
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 111
+    operator: ROR
+  number: 40
+  status: survived
+  tests_run: 20
+  time: 0.40261244773864746
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 125
+    operator: ROR
+  number: 41
+  status: survived
+  tests_run: 20
+  time: 0.3946232795715332
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 134
+    operator: ROR
+  number: 42
+  status: survived
+  tests_run: 20
+  time: 0.4001491069793701
+- exception_traceback: null
+  killer: null
+  module: *id001
+  mutations:
+  - lineno: 149
+    operator: ROR
+  number: 43
+  status: survived
+  tests_run: 20
+  time: 0.39365625381469727
+- exception_traceback: "def test_transfer_international_with_fx_fee():\n        sender\
+    \ = Account(\"A1\", 1000, True, True, False, \"US\")\n        receiver = Account(\"\
+    B1\", 100, True, True, False, \"US\")\n        status, new_sender, new_receiver\
+    \ = transfer_funds(sender, receiver, 100, True, False)\n>       assert status\
+    \ == \"Transfer Completed\"\nE       AssertionError\n\ntest_banking.py:102: AssertionError"
+  killer: test_banking.py::test_transfer_international_with_fx_fee
+  module: *id001
+  mutations:
+  - lineno: 158
+    operator: ROR
+  number: 44
+  status: killed
+  tests_run: 19
+  time: 0.4330329895019531
+number_of_tests: 20
+targets:
+- banking
+tests:
+- name: test_banking
+  target: null
+  time: 2.7755465507507324
+time_stats:
+  create_mutant_module: 0.098388671875
+  create_target_ast: 0.00759434700012207
+  mutate_module: 19.077438831329346
+  run_tests_with_mutant: 18.523747444152832
+total_time: 21.856342554092407

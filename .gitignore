@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# API Keys
+*API key*
+*API_Key*
+*.key
+
+# Java compiled
+*.class
+
+# Windows executables
+*.exe
+*.dll
+
+# Zip archives
+*.zip
+
+# Temp
+*.tmp
+.path_coverage_tmp/
+
+# IDE
+.vscode/
+.idea/
